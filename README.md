@@ -64,5 +64,5 @@ npm run start
 
 This project is for testing purposes. For more information contact the repository owner.
 
-This repository is intented to serve as a Frontend with services capabilities, using Octokit as provider. If you want to test the only backend API version check the next link:
-[GitLooker Only Backend API](https://github.com/xCHZx/ftf-tht-backend)
+This repository is intented to serve as a API parsing the Octokit provider. If you want to test the Only Frontend version check the next link:
+[GitLooker Frontend](https://github.com/xCHZx/ftf-tht-frontend)
