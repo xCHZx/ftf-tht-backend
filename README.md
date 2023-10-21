@@ -1,73 +1,68 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# GitLooker API
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is **GitLooker** only backend API version
 
-## Description
+This project is intended to run in a local environment.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## API Reference
 
-## Installation
+#### Get all commits
 
-```bash
-$ npm install
+```http
+  GET /commits/
 ```
 
-## Running the app
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `Octokit Token` | `string` | **Required**. Your Octokit token in .ENV file |
 
-```bash
-# development
-$ npm run start
+#### Get item
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```http
+  GET /commits/${sha}
 ```
 
-## Test
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `sha`      | `string` | **Required**. The SHA / Id of the commit |
+
+
+
+# Demo
+
+You can interact with a live frontend demo in this link:
+[GitLooker Demo](https://gitlooker.netlify.app/)
+
+# Installation
+
+
+To install this project **with npm** you need to download the repository through a git clone:
 
 ```bash
-# unit tests
-$ npm run test
+git clone https://github.com/xCHZx/ftf-tht-backend.git
+```
+Once the project is downloaded, open your terminal in the directory of the folder and run the following command to install the dependencies:
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```bash
+npm install
+```
+This project needs a Personal Access Token from GitHub to be able to connect to the API.
+Once you have the token, you need to place it in the .env file inside the project.
+```bash
+OCTOKIT_TOKEN = your_token_goes_here
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+To run the app, start the server running the following command:
 
-## Stay in touch
+```bash
+npm run start
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Notes
 
-## License
+This project is for testing purposes. For more information contact the repository owner.
 
-Nest is [MIT licensed](LICENSE).
+This repository is intented to serve as a Frontend with services capabilities, using Octokit as provider. If you want to test the only backend API version check the next link:
+[GitLooker Only Backend API](https://github.com/xCHZx/ftf-tht-backend)
